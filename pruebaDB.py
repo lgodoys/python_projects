@@ -197,7 +197,7 @@ def actualizarDatosSQL(consultaEjecutar,db):
 ipBD = 'localhost'
 nombreBD = ''
 usuarioBD = 'leonardo'
-passwordBD = 'W4rw1ck.2022365'
+passwordBD = 'miContrasenaSegura'
 errorSQL, isConnectedSQL, dbSQL = llamadaBDMySQL(ipBD, nombreBD, usuarioBD, passwordBD)
 if errorSQL is not None:
     print("Error: se produjo un error al conectar al motor de base de datos: %s"%(str(errorSQL)))
