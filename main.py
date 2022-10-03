@@ -38,14 +38,18 @@ dirpath = os.path.dirname(os.path.abspath(__file__))
 if not os.path.exists(dirpath+"/reportes"):
     os.makedirs(dirpath+"/reportes")
 
+#Definimos las rutas sobre las cuales trabajará en la generación de reportes
 writer = dirpath + "/reportes/reporteExcel.xlsx"
 wroter = dirpath + "/reportes/reportePDF.pdf"
+#Definimos las columnas que ingresan desde el archivo CSV y las de salida para los reportes
 input_col_list=["id","nombre","apellido","rut","direccion"]
 excel_columns=["ID","Nombre","Apellido","RUT","Dirección"]
 pdf_columns=["ID","Nombre completo","RUT","Direccion"]
 
+#Instanciamos un nuevo objeto tipy ManejoDeArchivos para manejar el CSV y los reportes
 new = ManejoDeArchivos()
 
+#Creamos el DataFrame que se usará en el resto del proceso, y guardamos los datos en la base de datos
 df, error = new.crearDataFrame(dirpath+'/input/datos.csv',input_col_list)
 nombre,apellido,rut,direccion,error = new.procesarDataFrame(df)
 for n,a,r,d in zip(nombre,apellido,rut,direccion):
@@ -60,6 +64,7 @@ for n,a,r,d in zip(nombre,apellido,rut,direccion):
         else:
             LOGGER.warning(errorMySQL)
 
+#Consultamos la base de datos y generamos un archivo Excel con extension .XLSX
 errorSQL, isConnectedSQL, dbSQL = llamadaBDMySQL(IPBD, BDNOMBRE, USUARIOBD, PASSBD)
 if errorSQL is not None:
     LOGGER.warning("Error: se produjo un error al conectar a la base de datos: %s"%(str(errorSQL)))
@@ -72,6 +77,7 @@ else:
     else:
         LOGGER.warning(errorMySQL)
 
+#Consultamos la base de datos y generamos un archivo PDF
 errorSQL, isConnectedSQL, dbSQL = llamadaBDMySQL(IPBD, BDNOMBRE, USUARIOBD, PASSBD)
 if errorSQL is not None:
     LOGGER.warning("Error: se produjo un error al conectar a la base de datos: %s"%(str(errorSQL)))
