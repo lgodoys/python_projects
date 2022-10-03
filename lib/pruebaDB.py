@@ -120,7 +120,7 @@ class BaseDatosMySQL:
 # Fuera de la clase, se configuran los métodos para levantar la conexión a la BD.
 def llamadaBDMySQL(ipDB, nombreBD, usuarioBD, passwordBD):
     errorSQL = None
-    dbSQL = BaseDatosMySQL(ipBD, nombreBD, usuarioBD, passwordBD)
+    dbSQL = BaseDatosMySQL(ipDB, nombreBD, usuarioBD, passwordBD)
     isConnectedSQL = dbSQL.isConnected()
     if not isConnectedSQL:
         errorSQL = "No está conectado a MySQL..."
@@ -193,6 +193,7 @@ def actualizarDatosSQL(consultaEjecutar,db):
         print("Error en actualizar datos en base de datos MySQL: %s"%(error))
     return mensaje, estado, error
 
+"""
 ### Para crear BD:
 ipBD = 'localhost'
 nombreBD = ''
@@ -223,7 +224,6 @@ else:
         print("Se ha creado exitosamente la tabla prueba en la base de datos.")
     else:
         print(errorMySQL)
-
 
 ### Para insertar datos en la tabla:
 id=1
@@ -325,3 +325,4 @@ else:
     else:
         print(errorMySQL)
 
+"""

@@ -1,0 +1,11 @@
+2022-10-02 21:47:01 INFO     Se ha creado exitosamente la base de datos pythonTesting. El siguiente es el listado de bases de datos en el DBMS
+2022-10-02 21:47:01 INFO     [('bugtracker',), ('information_schema',), ('mysql',), ('performance_schema',), ('phpmyadmin',), ('restaurant',), ('sys',)]
+2022-10-02 21:47:01 INFO     Se ha creado exitosamente la tabla empleados en la base de datos.
+2022-10-02 21:47:01 INFO     Se guardó exitosamente
+2022-10-02 21:47:01 INFO     Se guardó exitosamente
+2022-10-02 21:47:01 INFO     Se guardó exitosamente
+2022-10-02 21:47:01 INFO     Se guardó exitosamente
+2022-10-02 21:47:01 INFO     Se guardó exitosamente
+2022-10-02 21:47:01 INFO     Se guardó exitosamente
+2022-10-02 21:47:01 INFO     Se guardó exitosamente
+2022-10-02 21:47:01 INFO     Se guardó exitosamente
